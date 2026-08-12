@@ -703,6 +703,29 @@ input, select, textarea { font: inherit; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--text-faint);
+}
+.pricing-tier-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.pricing-tier-heading .pricing-tier-label { margin-bottom: 0; }
+.promo-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-warm);
+  background: rgba(255, 159, 67, 0.12);
+  border: 1px solid rgba(255, 159, 67, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.pricing-tier-note {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  max-width: 620px;
   margin-bottom: 20px;
 }
 
