@@ -610,9 +610,19 @@ input, select, textarea { font: inherit; }
 /* ==========================================================================
    Pricing
    ========================================================================== */
+.pricing-tier { margin-bottom: 44px; }
+.pricing-tier:last-child { margin-bottom: 0; }
+.pricing-tier-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+}
+
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   align-items: stretch;
 }
@@ -625,11 +635,6 @@ input, select, textarea { font: inherit; }
   flex-direction: column;
   position: relative;
   transition: transform 0.3s var(--ease);
-}
-.pricing-card-featured {
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.06), rgba(124, 92, 255, 0.04));
-  border-color: rgba(0, 229, 255, 0.4);
-  transform: scale(1.03);
 }
 .pricing-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
 .price {
@@ -779,7 +784,6 @@ input, select, textarea { font: inherit; }
   .experience-card-lg { grid-column: span 2; }
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
   .horizon-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 920px) {
@@ -818,7 +822,6 @@ input, select, textarea { font: inherit; }
   .hero { padding-top: 128px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
   .contact-grid { grid-template-columns: 1fr; }
-  .pricing-card-featured { transform: none; }
 }
 
 @media (max-width: 720px) {
