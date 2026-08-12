@@ -476,6 +476,92 @@ input, select, textarea { font: inherit; }
 .sim-tagline { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 22px; }
 .sim-card .program-list { margin-bottom: 0; }
 
+/* ==========================================================================
+   About the Simulators (deep dive)
+   ========================================================================== */
+.deepdive-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  margin-bottom: 24px;
+}
+.deepdive-panel:last-child { margin-bottom: 0; }
+.deepdive-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.deepdive-head .card-icon { margin-bottom: 0; flex-shrink: 0; }
+.deepdive-head .sim-badge { display: inline-block; margin-bottom: 10px; }
+.deepdive-head h3 { font-size: 1.4rem; margin-bottom: 6px; }
+.deepdive-head .sim-tagline { margin-bottom: 0; }
+
+.deepdive-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.deepdive-specs-3 { grid-template-columns: repeat(3, 1fr); }
+.spec-group h4 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.spec-group ul { display: flex; flex-direction: column; gap: 10px; }
+.spec-group li {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  padding-left: 16px;
+  position: relative;
+}
+.spec-group li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 7px;
+  width: 6px; height: 6px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+}
+
+.deepdive-aircraft {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.deepdive-aircraft h4 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.deepdive-note { font-size: 0.85rem; color: var(--text-faint); margin-bottom: 18px; max-width: 720px; }
+.deepdive-note-sub { margin-top: 16px; margin-bottom: 0; }
+.deepdive-note-sub strong { color: var(--text-dim); font-weight: 600; }
+.aircraft-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.aircraft-tags .tag {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -784,6 +870,7 @@ input, select, textarea { font: inherit; }
   .experience-card-lg { grid-column: span 2; }
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
   .horizon-grid { grid-template-columns: repeat(2, 1fr); }
+  .deepdive-specs { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 920px) {
@@ -832,6 +919,9 @@ input, select, textarea { font: inherit; }
   .programs-grid { grid-template-columns: 1fr; }
   .horizon-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .deepdive-specs { grid-template-columns: 1fr; }
+  .deepdive-head { flex-direction: column; }
+  .deepdive-panel { padding: 28px 24px; }
   .section { padding: 80px 0; }
   .br-desktop { display: inline; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
