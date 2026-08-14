@@ -531,6 +531,18 @@ input, select, textarea { font: inherit; }
   background: var(--gradient-brand);
 }
 
+.deepdive-footer {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.deepdive-footer .deepdive-note { margin-bottom: 0; }
+
 .deepdive-aircraft {
   margin-top: 32px;
   padding-top: 28px;
