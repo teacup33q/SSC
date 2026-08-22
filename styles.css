@@ -11,7 +11,7 @@
 
   --text: #eef1f7;
   --text-dim: #9aa4b8;
-  --text-faint: #6b7488;
+  --text-faint: #8088a0;
 
   --accent: #00e5ff;
   --accent-2: #7c5cff;
@@ -36,7 +36,7 @@
    Reset
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   margin: 0;
   background: var(--bg);
@@ -53,6 +53,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0;
 p { margin: 0; }
 button { font: inherit; cursor: pointer; }
 input, select, textarea { font: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 .container {
   width: 100%;
@@ -837,8 +843,13 @@ input, select, textarea { font: inherit; }
 .form-row input:focus,
 .form-row select:focus,
 .form-row textarea:focus {
-  outline: none;
   border-color: var(--accent);
+}
+.form-row input:focus-visible,
+.form-row select:focus-visible,
+.form-row textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 .form-note { margin-top: 14px; font-size: 0.85rem; color: var(--accent); min-height: 1.2em; }
 
