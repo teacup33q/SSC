@@ -83,44 +83,47 @@ statEls.forEach((el) => statObserver.observe(el));
 const CONTACT_ENDPOINT = 'https://kyl86hznz0.execute-api.us-west-2.amazonaws.com/';
 
 const contactForm = document.getElementById('contact-form');
-const formNote = document.getElementById('form-note');
-const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
 
-contactForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  if (!contactForm.checkValidity()) {
-    contactForm.reportValidity();
-    return;
-  }
+if (contactForm) {
+  const formNote = document.getElementById('form-note');
+  const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const program = document.getElementById('program').value;
-  const message = document.getElementById('message').value.trim();
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
 
-  const originalLabel = contactSubmitBtn.textContent;
-  contactSubmitBtn.disabled = true;
-  contactSubmitBtn.textContent = 'Sending…';
-  formNote.textContent = '';
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const program = document.getElementById('program').value;
+    const message = document.getElementById('message').value.trim();
 
-  try {
-    const res = await fetch(CONTACT_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, program, message }),
-    });
+    const originalLabel = contactSubmitBtn.textContent;
+    contactSubmitBtn.disabled = true;
+    contactSubmitBtn.textContent = 'Sending…';
+    formNote.textContent = '';
 
-    if (!res.ok) throw new Error('Request failed');
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, program, message }),
+      });
 
-    formNote.textContent = `Thanks${name ? ', ' + name.split(' ')[0] : ''}! We'll get back to you within one business day.`;
-    contactForm.reset();
-  } catch (err) {
-    formNote.textContent = 'Something went wrong sending that — please email us directly at fly@seattlesimcenter.com.';
-  } finally {
-    contactSubmitBtn.disabled = false;
-    contactSubmitBtn.textContent = originalLabel;
-  }
-});
+      if (!res.ok) throw new Error('Request failed');
+
+      formNote.textContent = `Thanks${name ? ', ' + name.split(' ')[0] : ''}! We'll get back to you within one business day.`;
+      contactForm.reset();
+    } catch (err) {
+      formNote.textContent = 'Something went wrong sending that — please email us directly at fly@seattlesimcenter.com.';
+    } finally {
+      contactSubmitBtn.disabled = false;
+      contactSubmitBtn.textContent = originalLabel;
+    }
+  });
+}
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
