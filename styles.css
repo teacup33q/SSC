@@ -641,37 +641,8 @@ input, select, textarea { font: inherit; }
 .experience-card p { color: var(--text-dim); font-size: 0.95rem; }
 
 /* ==========================================================================
-   Programs
+   Program list (shared bullet style — sim-cards, pricing cards)
    ========================================================================== */
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.program-card {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
-}
-.program-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-.program-card h3 { font-size: 1.15rem; margin-bottom: 12px; padding-right: 10px; }
-.program-card > p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 20px; }
-.program-tag {
-  position: absolute;
-  top: -12px; left: 28px;
-  background: var(--gradient-brand);
-  color: #05070c;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 5px 12px;
-  border-radius: 999px;
-}
 .program-list { margin-bottom: 24px; flex: 1; }
 .program-list li {
   font-size: 0.88rem;
@@ -688,13 +659,6 @@ input, select, textarea { font: inherit; }
   border-radius: 2px;
   background: var(--gradient-brand);
 }
-.program-link {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-.program-link:hover { text-decoration: underline; }
-
 /* ==========================================================================
    Horizon / Future
    ========================================================================== */
@@ -957,7 +921,6 @@ input, select, textarea { font: inherit; }
 @media (max-width: 1080px) {
   .experience-grid { grid-template-columns: repeat(2, 1fr); }
   .experience-card-lg { grid-column: span 2; }
-  .programs-grid { grid-template-columns: repeat(2, 1fr); }
   .horizon-grid { grid-template-columns: repeat(2, 1fr); }
   .deepdive-specs { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1007,7 +970,6 @@ input, select, textarea { font: inherit; }
   .sim-grid { grid-template-columns: 1fr; }
   .experience-grid { grid-template-columns: 1fr; }
   .experience-card-lg { grid-column: span 1; }
-  .programs-grid { grid-template-columns: 1fr; }
   .horizon-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .deepdive-specs { grid-template-columns: 1fr; }
