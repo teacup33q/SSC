@@ -698,7 +698,6 @@ input, select, textarea { font: inherit; }
   margin-bottom: 16px;
 }
 .status-live { background: rgba(0, 229, 255, 0.14); color: var(--accent); }
-.status-soon { background: rgba(124, 92, 255, 0.14); color: var(--accent-2); }
 .status-future { background: rgba(255, 255, 255, 0.06); color: var(--text-faint); }
 
 .horizon-cta {
