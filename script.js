@@ -48,7 +48,7 @@ const revealObserver = new IntersectionObserver(
 revealEls.forEach((el) => revealObserver.observe(el));
 
 // Animated stat counters
-const statEls = document.querySelectorAll('.hero-stats dt');
+const statEls = document.querySelectorAll('.stats-bar dt');
 const animateStat = (el) => {
   const target = parseFloat(el.dataset.count);
   const decimals = parseInt(el.dataset.decimal || '0', 10);
