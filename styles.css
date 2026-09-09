@@ -13,12 +13,13 @@
   --text-dim: #9aa4b8;
   --text-faint: #8088a0;
 
-  --accent: #00e5ff;
+  --accent: #00ffff;
   --accent-2: #7c5cff;
   --accent-warm: #ff9f43;
+  --accent-magenta: #ff2ee6;
 
   --gradient-brand: linear-gradient(135deg, var(--accent), var(--accent-2));
-  --gradient-radial: radial-gradient(circle at 30% 20%, rgba(0, 229, 255, 0.18), transparent 60%);
+  --gradient-radial: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.18), transparent 60%);
 
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -28,7 +29,7 @@
   --radius: 16px;
   --radius-sm: 10px;
 
-  --shadow-glow: 0 0 40px rgba(0, 229, 255, 0.12);
+  --shadow-glow: 0 0 40px rgba(0, 255, 255, 0.12);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   --announce-h: 56px;
@@ -108,9 +109,9 @@ input, select, textarea { font: inherit; }
 .btn-primary {
   background: var(--gradient-brand);
   color: #05070c;
-  box-shadow: 0 8px 24px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.25);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0, 229, 255, 0.35); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0, 255, 255, 0.35); }
 .btn-ghost {
   color: var(--text);
   border-color: var(--border-strong);
@@ -358,7 +359,7 @@ input, select, textarea { font: inherit; }
   width: min(420px, 100%);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.06), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.06), transparent 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -369,7 +370,7 @@ input, select, textarea { font: inherit; }
   border: 1px solid var(--border-strong);
 }
 .hud-ring-outer { inset: 0; animation: spin-slow 40s linear infinite; border-style: dashed; }
-.hud-ring-mid { inset: 12%; border-color: rgba(0, 229, 255, 0.25); animation: spin-slow 30s linear infinite reverse; }
+.hud-ring-mid { inset: 12%; border-color: rgba(0, 255, 255, 0.25); animation: spin-slow 30s linear infinite reverse; }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 
 .hud-crosshair { position: absolute; inset: 30%; }
@@ -380,7 +381,7 @@ input, select, textarea { font: inherit; }
 .hud-plane {
   position: relative;
   width: 46%;
-  filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.5));
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.5));
   animation: float-plane 5s ease-in-out infinite;
 }
 @keyframes float-plane {
@@ -418,7 +419,7 @@ input, select, textarea { font: inherit; }
   position: absolute;
   left: 0; right: 0;
   height: 40%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.08), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(0, 255, 255, 0.08), transparent);
   animation: scan 4s linear infinite;
 }
 @keyframes scan {
@@ -512,7 +513,7 @@ input, select, textarea { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(124, 92, 255, 0.12));
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.12), rgba(124, 92, 255, 0.12));
   color: var(--accent);
   margin-bottom: 20px;
 }
@@ -550,10 +551,11 @@ input, select, textarea { font: inherit; }
   font-size: 0.66rem;
   letter-spacing: 0.06em;
   color: var(--accent);
-  background: rgba(0, 229, 255, 0.1);
+  background: rgba(0, 255, 255, 0.1);
   padding: 5px 10px;
   border-radius: 999px;
 }
+.sim-badge-magenta { color: var(--accent-magenta); background: rgba(255, 46, 230, 0.12); }
 .sim-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
 .sim-model { color: var(--text-dim); font-weight: 500; }
 .sim-tagline { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 22px; }
@@ -724,7 +726,7 @@ input, select, textarea { font: inherit; }
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .horizon-card:hover { transform: translateY(-4px); }
-.horizon-card.is-live { border-color: rgba(0, 229, 255, 0.35); }
+.horizon-card.is-live { border-color: rgba(0, 255, 255, 0.35); }
 .horizon-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .horizon-card p { color: var(--text-dim); font-size: 0.88rem; }
 .horizon-status {
@@ -736,8 +738,8 @@ input, select, textarea { font: inherit; }
   border-radius: 999px;
   margin-bottom: 16px;
 }
-.status-live { background: rgba(0, 229, 255, 0.14); color: var(--accent); }
-.status-future { background: rgba(255, 255, 255, 0.06); color: var(--text-faint); }
+.status-live { background: rgba(0, 255, 255, 0.14); color: var(--accent); }
+.status-future { background: rgba(255, 46, 230, 0.12); color: var(--accent-magenta); }
 
 .horizon-cta {
   margin-top: 56px;
@@ -821,7 +823,7 @@ input, select, textarea { font: inherit; }
   z-index: 1;
   padding: 90px 0;
   background:
-    radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.14), transparent 60%),
+    radial-gradient(circle at 50% 0%, rgba(0, 255, 255, 0.14), transparent 60%),
     var(--bg-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
