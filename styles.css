@@ -30,13 +30,15 @@
 
   --shadow-glow: 0 0 40px rgba(0, 229, 255, 0.12);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --announce-h: 56px;
 }
 
 /* ==========================================================================
    Reset
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(90px + var(--announce-h)); }
 body {
   margin: 0;
   background: var(--bg);
@@ -126,11 +128,48 @@ input, select, textarea { font: inherit; }
 .btn-block { width: 100%; }
 
 /* ==========================================================================
+   Announcement Bar (temporary — remove after Grand Opening)
+   ========================================================================== */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 110;
+  height: var(--announce-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(255, 159, 67, 0.18), rgba(124, 92, 255, 0.18));
+  border-bottom: 1px solid rgba(255, 159, 67, 0.35);
+}
+.announce-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 8px 16px;
+}
+.announce-icon { color: var(--accent-warm); flex-shrink: 0; }
+.announce-bar p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+.announce-bar strong {
+  color: var(--accent-warm);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.02rem;
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--announce-h); left: 0; right: 0;
   z-index: 100;
   padding: 18px 0;
   transition: background 0.3s var(--ease), padding 0.3s var(--ease), border-color 0.3s var(--ease);
@@ -226,7 +265,7 @@ input, select, textarea { font: inherit; }
    ========================================================================== */
 .hero {
   position: relative;
-  padding: 168px 0 0;
+  padding: calc(168px + var(--announce-h)) 0 0;
   overflow: hidden;
 }
 .hero-glow {
@@ -927,7 +966,7 @@ input, select, textarea { font: inherit; }
 @media (max-width: 920px) {
   .main-nav {
     position: fixed;
-    top: 64px;
+    top: calc(64px + var(--announce-h));
     left: 16px;
     right: 16px;
     flex-direction: column;
@@ -959,7 +998,7 @@ input, select, textarea { font: inherit; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { order: -1; margin-bottom: 12px; }
   .hud-panel { width: min(320px, 80%); margin: 0 auto; }
-  .hero { padding-top: 128px; }
+  .hero { padding-top: calc(128px + var(--announce-h)); }
   .stats-bar { grid-template-columns: repeat(2, 1fr); row-gap: 24px; gap: 32px; }
   .contact-grid { grid-template-columns: 1fr; }
 }
@@ -983,4 +1022,8 @@ input, select, textarea { font: inherit; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 24px 20px; }
   .hud-readout { padding: 6px 9px; }
   .hud-readout .value { font-size: 0.82rem; }
+
+  :root { --announce-h: 78px; }
+  .announce-bar p { font-size: 0.8rem; }
+  .announce-bar strong { font-size: 0.83rem; }
 }
