@@ -47,38 +47,6 @@ const revealObserver = new IntersectionObserver(
 );
 revealEls.forEach((el) => revealObserver.observe(el));
 
-// Animated stat counters
-const statEls = document.querySelectorAll('.stats-bar dt');
-const animateStat = (el) => {
-  const target = parseFloat(el.dataset.count);
-  const decimals = parseInt(el.dataset.decimal || '0', 10);
-  const suffix = el.dataset.suffix || '';
-  const duration = 1400;
-  const start = performance.now();
-
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = target * eased;
-    el.textContent = value.toFixed(decimals) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-};
-
-const statObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateStat(entry.target);
-        statObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.6 }
-);
-statEls.forEach((el) => statObserver.observe(el));
-
 // Contact form — sends to the contact-form Lambda via API Gateway
 const CONTACT_ENDPOINT = 'https://kyl86hznz0.execute-api.us-west-2.amazonaws.com/';
 
