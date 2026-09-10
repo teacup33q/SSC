@@ -526,7 +526,6 @@ input, select, textarea { font: inherit; }
   padding: 5px 10px;
   border-radius: 999px;
 }
-.sim-badge-magenta { color: var(--accent-magenta); background: rgba(255, 46, 230, 0.12); }
 .sim-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
 .sim-model { color: var(--text-dim); font-weight: 500; }
 .sim-tagline { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 22px; }
