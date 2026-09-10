@@ -785,6 +785,17 @@ input, select, textarea { font: inherit; }
 .price span { display: block; font-family: var(--font-body); font-size: 0.8rem; font-weight: 400; color: var(--text-faint); margin-top: 4px; }
 .pricing-card .program-list { margin-bottom: 28px; }
 
+.instructor-note {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  max-width: 640px;
+}
+.instructor-note h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.instructor-note p { color: var(--text-dim); font-size: 0.95rem; }
+.instructor-note a { color: var(--accent); text-decoration: underline; }
+.instructor-note a:hover { color: var(--accent-2); }
+
 /* ==========================================================================
    CTA Banner
    ========================================================================== */
