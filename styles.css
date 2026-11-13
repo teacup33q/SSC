@@ -555,6 +555,18 @@ input, select, textarea { font: inherit; }
 .deepdive-head h3 { font-size: 1.4rem; margin-bottom: 6px; }
 .deepdive-head .sim-tagline { margin-bottom: 0; }
 
+.deepdive-media {
+  margin-bottom: 32px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.deepdive-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .deepdive-specs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
