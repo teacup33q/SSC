@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.00 -16.00 400.42 400.42">
+<defs>
+<linearGradient id="ssc-mark-grad" x1="8" y1="10" x2="92" y2="90" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#00ffff"/>
+<stop offset="1" stop-color="#7c5cff"/>
+</linearGradient>
+</defs>
+<g transform="translate(0, 0.0) scale(3.6842105263157894)">
+<path d="M50 10 L59 44 L92 50 L59 56 L50 90 L41 56 L8 50 L41 44 Z" fill="url(#ssc-mark-grad)"/>
+</g>
+</svg>
