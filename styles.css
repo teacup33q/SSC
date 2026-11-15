@@ -998,6 +998,16 @@ input, select, textarea { font: inherit; }
 }
 .step-sub { border: 1px dashed rgba(124, 92, 255, 0.7); }
 .step-branch { border: 1px solid rgba(255, 159, 67, 0.5); }
+.step-cond {
+  margin-top: 6px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  border: 1px solid rgba(255, 159, 67, 0.5);
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+.step-cond .step-sub-label { color: var(--accent-warm); }
 .step-branch p + p { margin-top: 4px; }
 .step-branch strong { color: var(--text); }
 .step-sub-label {
